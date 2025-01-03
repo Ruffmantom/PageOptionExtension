@@ -1,16 +1,12 @@
 .po_app_container {
     border: 1px solid blueviolet;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
+    position: relative;
     padding: 10px;
     width: 500px;
     height: 500px;
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 
 .po_main_content_cont {
