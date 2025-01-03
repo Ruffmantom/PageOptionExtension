@@ -1,0 +1,60 @@
+.po_app_container {
+    border: 1px solid blueviolet;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    max-width: 600px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.po_main_content_cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#intro_text {
+    position: relative;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.po_option_table_row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.po_header_title_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.po_option_table_cell{
+    display: flex;
+    align-items: center;gap: 5px;
+}
+.po_table_option_input{
+    width: 100%;
+}
+.po_option_table_cell:nth-child(even) {
+    min-width: calc(100%/2.5);
+}
+
+.po_option_table_body {
+    padding-top: 10px;
+}
+.po_option_index{
+
+}
