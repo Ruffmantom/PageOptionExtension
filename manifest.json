@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Product Type Tool",
+  "version": "0.0.1",
+  "description": "This extension simplifies your work for working in the CloudLab backend.",
+  "action": {
+    "default_title": "Product Type Tool",
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "./assets/images/16.png",
+    "48": "./assets/images/48.png",
+    "128": "./assets/images/128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*"],
+      "css": [
+        "./assets/styles/reset.css",
+        "./assets/styles/theme.css",
+        "./assets/styles/styles.css"
+      ],
+      "js": [
+        "./lib/jquery.js",
+        "./app.js",
+        "./assets/js/blocks.js",
+        "./assets/js/helpers.js",
+        "./assets/js/store.js"
+      ]
+    }
+  ]
+}
