@@ -25,6 +25,7 @@ const option_name_input = $("#option_name_input")
 
 // on load
 $(() => {
+    loadApp();
     let newId = generateCustomId();
     let newToken = generateRandomToken();
 

@@ -1,6 +1,7 @@
 const createProductOptionHtml = (option) => {
+    console.log('about to render option', option)
     return `
-    <div data-optionid="${option._id}" class="po_option po_option_table_row">
+    <div data-optionid="${option.id}" class="po_option po_option_table_row">
         
         <div class="po_option_table_cell">
             <button data-tooltip="Delete Option"
@@ -19,7 +20,7 @@ const createProductOptionHtml = (option) => {
         </div>
         
         <div class="po_option_table_cell">
-            <input class="po_table_option_input" value="${option.sortId}" type="number" placeholder="0" min="0"
+            <input class="po_table_option_input" value="${option.sortNumber}" type="text" placeholder="0" min="0"
                 max="50">
         </div>
         
@@ -28,5 +29,8 @@ const createProductOptionHtml = (option) => {
         </div>
 
     </div>
+
+
+
     `
 }

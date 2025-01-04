@@ -31,6 +31,9 @@
     gap: 10px;
     align-items: center;
 }
+.po_option_table_row:not(:last-child) {
+    margin-bottom: 10px;
+}
 
 .po_header_title_cont {
     display: flex;
