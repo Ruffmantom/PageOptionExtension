@@ -29,3 +29,4 @@ const option_name_input = $("#option_name_input")
 
 // variables
 let newProductTypeNameValue = "";
+let newOptionNameValue = "";

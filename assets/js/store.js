@@ -12,7 +12,10 @@ const LOCAL_STORAGE_KEY = 'eRXhSBUBMaQgkqKApzZXMPyGeFbcTyprTxKt3Mwz92GPx2mJ2XbNY
 
 
 // render functions
-const renderProductTypes = () => {
+const renderDom = () => {
+    $(po_tab_navigation_bar).empty();
+    //empty the option table   
+    $(po_option_table).empty();
     // render the current product type
     let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
     if (!currentProductType && globalStore.productTypes.length > 0) {
@@ -21,7 +24,6 @@ const renderProductTypes = () => {
         currentProductType = globalStore.productTypes[0];
     }
     // add all product types to the tab navigation
-    po_tab_navigation_bar.empty();
     globalStore.productTypes.forEach((productType) => {
         $(po_tab_navigation_bar).append(createProductTypeTab(productType, currentProductType.id));
     })
@@ -44,7 +46,7 @@ const loadApp = async () => {
         $(intro_text).hide();
         // show the table
         $(po_option_table).show();
-        renderProductTypes();
+        renderDom();
     } else {
         console.log('we have no data')
         // show the intro text

@@ -2,7 +2,7 @@
 $(() => {
     // load the app
     loadApp();
-  
+
     let newToken = generateRandomToken();
 
     // open settings modal
@@ -51,13 +51,40 @@ $(() => {
             globalStore.currentProductType = newId;
             saveToLocalStorage();
             $(add_product_type_modal).removeClass("active")
-            loadApp();
+            renderDom();
             // clear the input
             newProductTypeNameValue = "";
             $(product_type_name).val("");
         }
-    })  
+    })
 
+    // get the New Option name
+    $(option_name_input).on('keyup', (e) => {
+        newOptionNameValue = e.target.value;
+    })
+
+    // create the New Option
+    $(create_new_option_btn).click((e) => {
+        e.preventDefault();
+        if (newOptionNameValue.length > 0) {
+            let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
+            let newId = generateCustomId();
+            let newIndex = currentProductType.options.length + 1;
+            currentProductType.options.push({
+                id: newId,
+                index: newIndex,
+                name: newOptionNameValue,
+                sortNumber: 0,
+                rename: ""
+            })
+            saveToLocalStorage();
+            $(add_new_option_modal).removeClass("active")
+            renderDom();
+            // clear the input
+            newOptionNameValue = "";
+            $(option_name_input).val("");
+        }
+    })
 
 
 
