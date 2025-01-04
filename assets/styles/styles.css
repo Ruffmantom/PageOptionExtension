@@ -71,7 +71,7 @@
 .po_tab_navigation_cont {
     display: flex;
     padding: 10px 0;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .po_tab_navigation {
@@ -79,7 +79,7 @@
     overflow-x: auto;
     gap: 10px;
     max-width: 90%;
-    width: 100%;
+    width: max-content;
     padding: 5px 0;
 }
 

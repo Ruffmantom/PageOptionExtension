@@ -1,3 +1,12 @@
+const createProductTypeTab = (data,currentProductTypeId)=>{
+    return `
+        <div class="po_tab_item ${currentProductTypeId === data.id? "active":''}" data-tabid="${data.id}">
+            <p class="txt_md">${data.name}</p>
+        </div>
+    `
+}
+
+
 const createProductOptionHtml = (option) => {
     console.log('about to render option', option)
     return `
