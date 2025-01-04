@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+
+    <style>
+        .tool_tip {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        #add_product_type_btn:hover ~ #po_main_tool_tip {
+            opacity: 1;
+            content: attr(data-tooltip);
+        }
+    </style>
+</head>
+
+<body>
+    <button data-tooltip="Add New Product Type" id="add_product_type_btn" class="icon_button subtle tooltip_cont">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+            <path
+                d="M441-442H267q-16.05 0-27.52-11.42Q228-464.84 228-480.8q0-15.97 11.48-27.58Q250.95-520 267-520h174v-174q0-16.05 11.42-27.52Q463.84-733 479.8-733q15.97 0 27.58 11.48Q519-710.05 519-694v174h174q16.05 0 27.52 11.42Q732-497.16 732-481.2q0 15.97-11.48 27.58Q709.05-442 693-442H519v174q0 16.05-11.42 27.52Q496.16-229 480.2-229q-15.97 0-27.58-11.48Q441-251.95 441-268v-174Z" />
+        </svg>
+    </button>
+    <button data-tooltip="Here is another tooltip" id="add_product_type_btn" class="icon_button subtle tooltip_cont">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+            <path
+                d="M441-442H267q-16.05 0-27.52-11.42Q228-464.84 228-480.8q0-15.97 11.48-27.58Q250.95-520 267-520h174v-174q0-16.05 11.42-27.52Q463.84-733 479.8-733q15.97 0 27.58 11.48Q519-710.05 519-694v174h174q16.05 0 27.52 11.42Q732-497.16 732-481.2q0 15.97-11.48 27.58Q709.05-442 693-442H519v174q0 16.05-11.42 27.52Q496.16-229 480.2-229q-15.97 0-27.58-11.48Q441-251.95 441-268v-174Z" />
+        </svg>
+    </button>
+
+
+
+    <p id="po_main_tool_tip" class="tool_tip">Hello world!</p>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $(".tooltip_cont").hover(function () {
+                var tooltip = $(this).attr("data-tooltip");
+                $("#po_main_tool_tip").text(tooltip);
+            });
+        });
+    </script>
+</body>
+
+</html>

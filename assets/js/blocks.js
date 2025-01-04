@@ -4,8 +4,7 @@ const createProductOptionHtml = (option) => {
     <div data-optionid="${option.id}" class="po_option po_option_table_row">
         
         <div class="po_option_table_cell">
-            <button data-tooltip="Delete Option"
-                class="icon_button danger tool_tip tt_right">
+            <button data-tooltip="Delete Option" class="icon_button danger tooltip_cont">
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                     width="20px">
                     <path
@@ -15,7 +14,7 @@ const createProductOptionHtml = (option) => {
         </div>
 
         <div class="po_option_table_cell">
-            <span class="po_option_index txt_sml txt_sml_50">${option.index}</span><input class="po_table_option_input"
+            <span class="po_option_index txt_sml txt_sml_50">${option.index}</span><input class="po_table_option_input p_l_20"
                 value="${option.name}" type="text" placeholder="Option Name">
         </div>
         

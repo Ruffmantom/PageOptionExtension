@@ -1,0 +1,7 @@
+- To add a tool tip item add the class name 
+    
+    ** "tooltip_cont" **
+    
+    and the data attribute 
+    
+    ** data-tooltip="Your tool tip here" **
