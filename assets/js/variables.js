@@ -26,3 +26,6 @@ const add_new_option_modal = $("#add_new_option_modal")
 // inputs
 const product_type_name = $("#product_type_name")
 const option_name_input = $("#option_name_input")
+
+// variables
+let newProductTypeNameValue = "";
