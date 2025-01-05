@@ -9,6 +9,76 @@
     margin: auto;
 }
 
+#product_type_menu_modal{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product_type_menu {
+    all: unset;
+    position: relative;
+    width: 60%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--container-bkg-0);
+    left: 0;
+    padding: 10px;
+    border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
+}
+
+.po_menu_tab_item.active::before {
+    content: '';
+    position: absolute;
+    height: 80%;
+    width: 3px;
+    left:4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-primary);
+    border-radius: 10pc;
+}
+
+.po_menu_tab_item{
+    padding:0 5px 0 10px;
+    position: relative;
+    display: flex;
+    background-color:var(--container-bkg-2);
+    border-radius: var(--border-radius-small);
+    width: 100%;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.po_menu_tab_item_name_cont{
+    display: flex;
+    align-items: center;
+    max-width: 75%;
+}
+
+.po_menu_tab_item_btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    z-index: 5;
+}
+
+.po_menu_tab_item_name{
+    max-width: 100%;
+    padding: 8px 10px;
+}
+.po_menu_tab_item_rename_input{
+    display: none;
+}
+.po_menu_tab_item_action_group{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
 .po_main_content_cont {
     position: relative;
     display: flex;
@@ -71,16 +141,12 @@
 .po_tab_navigation_cont {
     display: flex;
     padding: 10px 0;
-    /* justify-content: space-between; */
+    gap: 10px;
+    align-items: center;
 }
 
-.po_tab_navigation {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    max-width: 90%;
-    width: max-content;
-    padding: 5px 0;
+.po_tab_navigation{
+flex-grow: 1;
 }
 
 .po_tab_item {
@@ -111,7 +177,8 @@
     opacity: 1;
     transition: all 150ms ease-in;
 }
-.po_tab_item:hover::before{
+
+.po_tab_item:hover::before {
     opacity: 1;
     width: 70%;
     transition: all 150ms ease-in;

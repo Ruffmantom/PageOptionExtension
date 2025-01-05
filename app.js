@@ -15,12 +15,12 @@ $(() => {
     })
 
     // open add product type modal
-    $(add_product_type_btn).click(() => {
-        $(add_product_type_modal).addClass("active")
+    $(open_product_type_menu_btn).click(() => {
+        $(product_type_menu_modal).addClass("active")
     })
     // close add product type modal
-    $(add_product_type_modal_close).click(() => {
-        $(add_product_type_modal).removeClass("active")
+    $(product_type_menu_modal_close).click(() => {
+        $(product_type_menu_modal).removeClass("active")
     })
 
     // open add new option modal
@@ -32,6 +32,18 @@ $(() => {
         $(add_new_option_modal).removeClass("active")
     })
 
+    // highlight text inputs on focus
+    $(document).on('click', '#product_type_options_table input[type="text"]', function () {
+        this.select();
+    });
+
+    // need to add listener for the tab navigation
+    $(document).on('click', '.po_tab_item', function () {
+        let tabId = $(this).data('tabid');
+        globalStore.currentProductType = tabId;
+        saveToLocalStorage();
+        renderDom();
+    })
 
     // add new product type
     $(product_type_name).on('keyup', (e) => {

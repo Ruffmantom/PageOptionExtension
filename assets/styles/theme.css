@@ -14,7 +14,7 @@
     --color-dark: #343a40;
 
     --container-bkg-0: hsl(0, 0%, 100%);
-    --container-bkg-1: hsl(0, 0%, 95%);
+    --container-bkg-1: #f2f2f2;
     --container-bkg-2: hsl(0, 0%, 85%);
     --container-bkg-3: hsl(0, 0%, 75%);
 
@@ -83,6 +83,13 @@ button.icon_button.sml {
     width: 25px;
 }
 
+button.icon_button.sml svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+.icon_button.sml.subtle:hover,
 .icon_button.subtle:hover {
     background-color: var(--color-primary);
 }
@@ -91,6 +98,7 @@ button.icon_button.sml {
     fill: var(--color-light);
 }
 
+.icon_button.sml.danger:hover,
 .icon_button.danger:hover {
     background-color: var(--color-danger);
 }
@@ -121,14 +129,17 @@ input:focus-within {
 
 .txt_sml {
     font-size: 12px;
+    font-weight: 400;
 }
 
 .txt_md {
     font-size: 14px;
+    font-weight: 400;
 }
 
 .txt_lg {
     font-size: 16px;
+    font-weight: 400;
 }
 
 .txt_sml.txt_sml_50 {
@@ -136,7 +147,7 @@ input:focus-within {
 }
 
 .title {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .title_sml {
@@ -149,6 +160,13 @@ input:focus-within {
 
 .title_lg {
     font-size: 20px;
+}
+
+/* truncate single line text */
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .po_modal_cont {

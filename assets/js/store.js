@@ -1,5 +1,62 @@
 const getDefaultGlobalStore = () => ({
-    productTypes: [],
+    productTypes: [
+        {
+            id: "4484796298-91188956833-3779912650",
+            name: "Default Product Type",
+            options: [
+                {
+                    id: "3055988949-3394104210-2780396807",
+                    index: 1,
+                    name: "Paper",
+                    sortNumber: 0,
+                    rename: ""
+                },
+                {
+                    id: "1144022491-8285567828-7690050362",
+                    index: 2,
+                    name: "Format",
+                    sortNumber: 0,
+                    rename: ""
+                },
+                {
+                    id: "3009128949-3394104210-2799646807",
+                    index: 3,
+                    name: "Pages",
+                    sortNumber: 0,
+                    rename: ""
+                },
+                {
+                    id: "1144022491-8127942284-7690050362",
+                    index: 4,
+                    name: "Colors",
+                    sortNumber: 0,
+                    rename: ""
+                },
+                {
+                    id: "1337822491-8280642284-7690050362",
+                    index: 5,
+                    name: "Book Binding",
+                    sortNumber: 0,
+                    rename: ""
+                },
+                {
+                    id: "3009128949-3394104210-2762976807",
+                    index: 6,
+                    name: "Refinement",
+                    sortNumber: 0,
+                    rename: ""
+                },
+                {
+                    id: "1144022491-825972284-7690050362",
+                    index: 7,
+                    name: "Finishing",
+                    sortNumber: 0,
+                    rename: ""
+                },
+            ]
+        },
+
+    ],
     settings: {
         useIndexInName: false,
     },
@@ -13,9 +70,9 @@ const LOCAL_STORAGE_KEY = 'eRXhSBUBMaQgkqKApzZXMPyGeFbcTyprTxKt3Mwz92GPx2mJ2XbNY
 
 // render functions
 const renderDom = () => {
-    $(po_tab_navigation_bar).empty();
+    // $(po_tab_navigation_bar).empty();
     //empty the option table   
-    $(po_option_table).empty();
+    $(product_type_options_table).empty();
     // render the current product type
     let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
     if (!currentProductType && globalStore.productTypes.length > 0) {
@@ -23,13 +80,15 @@ const renderDom = () => {
         globalStore.currentProductType = globalStore.productTypes[0].id;
         currentProductType = globalStore.productTypes[0];
     }
+    // set display title
+    $(product_type_display_title).text(currentProductType.name);
     // add all product types to the tab navigation
     globalStore.productTypes.forEach((productType) => {
         $(po_tab_navigation_bar).append(createProductTypeTab(productType, currentProductType.id));
     })
     // clear the table
     currentProductType.options.forEach((productType) => {
-        $(po_option_table).append(createProductOptionHtml(productType));
+        $(product_type_options_table).append(createProductOptionHtml(productType));
     })
 }
 

@@ -23,8 +23,7 @@
         <div class="po_header">
             <div class="po_header_title_cont">
                 <p class="title title_lg">Product Types</p>
-                <button data-tooltip="Settings" id="po_open_settings_btn"
-                    class="icon_button subtle tooltip_cont">
+                <button data-tooltip="Settings" id="po_open_settings_btn" class="icon_button subtle tooltip_cont">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
                         <path
                             d="M418.69-84q-9.46 0-17.3-5.29-7.83-5.28-10.16-14.71l-16.77-94.85q-20.07-8.38-43.24-20.53-23.16-12.15-40.91-28.31L199-215.23q-8.85 2.31-18.38-.89-9.54-3.19-13.08-11.8l-62.08-112.16q-3.54-8.61-3.07-16.77.46-8.15 7.46-13.92l70.92-62q-1.38-11.85-2.96-24.42-1.58-12.58-1.58-25.43 0-11.94 1.58-23.84t2.96-24.77l-69.92-60q-7-5.77-7.27-14.62-.27-8.84 3.27-17.46l61.69-108q3.54-8.23 12.58-11.11 9.03-2.89 17.88-1.58l86.92 30.08q19.47-16.46 42.89-28.96t46.27-22.27L391.23-858q1.23-9.85 9.62-14.92 8.38-5.08 17.84-5.08h122.62q9.46 0 17.84 5.08 8.39 5.07 9.62 14.92l15.77 94.23q23 10.54 45.57 22.27 22.58 11.73 42.43 28.58L760.39-744q8.56-2.31 17.82 1.08 9.25 3.38 13.63 11.61l61.7 108.39q3.54 8.61 3.07 17.27-.46 8.65-7.46 14.42l-73.46 63.15q2.15 11.69 3.35 24.12 1.19 12.42 1.19 23.96 0 11.15-1.39 23.58-1.38 12.42-1.76 25.27l70.3 60.38q7 5.77 8.16 14.42 1.15 8.66-2.39 17.27l-60.31 110.77q-3.53 8.62-13.6 11.81-10.06 3.19-19.24.88l-92.46-32.46q-18.85 15.85-39.31 27.46-20.46 11.62-42.69 20.39L568.77-104q-2.33 9.43-10.16 14.71-7.84 5.29-17.3 5.29H418.69ZM461-162h36.46L517-263.15q38.62-7 71.87-25.82 33.26-18.82 59.98-49.8L743.23-307l19.39-30-74.77-67.38q6-18.54 9.8-37.7 3.81-19.15 3.81-39.65 0-20.89-3.31-38.42-3.3-17.54-9.3-38.7L763.38-625 746-655l-96.54 30.38q-22.08-28.46-58.51-49.21-36.43-20.76-74.33-27.02L499-800h-39.38l-16.24 97.77q-41.61 7.23-76.03 27.15-34.43 19.93-59.97 51.46L214-655l-19.38 30L268-557.62q-6 20.24-9.5 39.12t-3.5 36.31q0 17.19 3.5 36.69 3.5 19.5 9.12 42.12l-73 66.38L214-307l94-31q28.77 31.38 62.69 50.31 33.93 18.92 72.31 25.92L461-162Zm14.46-168q63.52 0 107.76-44.24T627.46-482q0-63.52-44.24-107.76T475.46-634q-62.54 0-107.27 44.24T323.46-482q0 63.52 44.73 107.76T475.46-330ZM479-481Z" />
@@ -33,37 +32,39 @@
             </div>
 
             <div class="po_tab_navigation_cont">
-                <div id="po_tab_navigation_bar" class="po_tab_navigation scrollable">
-                    <!-- these will be dynamically added -->
-                   
-                </div>
-
-                <button data-tooltip="Add New Product Type" id="add_product_type_btn"
+                <button data-tooltip="Product Type Menu" id="open_product_type_menu_btn"
                     class="icon_button subtle tooltip_cont">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
                         <path
-                            d="M441-442H267q-16.05 0-27.52-11.42Q228-464.84 228-480.8q0-15.97 11.48-27.58Q250.95-520 267-520h174v-174q0-16.05 11.42-27.52Q463.84-733 479.8-733q15.97 0 27.58 11.48Q519-710.05 519-694v174h174q16.05 0 27.52 11.42Q732-497.16 732-481.2q0 15.97-11.48 27.58Q709.05-442 693-442H519v174q0 16.05-11.42 27.52Q496.16-229 480.2-229q-15.97 0-27.58-11.48Q441-251.95 441-268v-174Z" />
+                            d="M337.08-610.69q-16.15 0-27.08-11.42-10.92-11.42-10.92-27.45 0-16.04 10.92-27.09 10.93-11.04 27.08-11.04H790q16.15 0 27.07 10.85Q828-665.99 828-649.96q0 16.04-10.93 27.65-10.92 11.62-27.07 11.62H337.08Zm0 168.69q-16.15 0-27.08-11.42-10.92-11.42-10.92-27.45 0-16.04 10.92-27.08Q320.93-519 337.08-519H790q16.15 0 27.07 10.85Q828-497.3 828-481.27q0 16.04-10.93 27.65Q806.15-442 790-442H337.08Zm0 168.69q-16.15 0-27.08-11.42-10.92-11.42-10.92-27.45 0-16.04 10.92-27.08 10.93-11.05 27.08-11.05H790q16.15 0 27.07 10.85Q828-328.61 828-312.58q0 16.04-10.93 27.66-10.92 11.61-27.07 11.61H337.08ZM175.31-602.38q-17.11 0-30.21-14.4-13.1-14.4-13.1-32.3 0-17.56 13.1-30.74T175.81-693q17.6 0 30.2 12.92 12.61 12.91 12.61 32 0 16.9-12.46 31.3-12.45 14.4-30.85 14.4Zm0 167.3q-17.11 0-30.21-13.68Q132-462.43 132-479.5q0-19.46 13.1-32.82 13.1-13.37 30.71-13.37 17.6 0 30.2 13.22 12.61 13.21 12.61 33.47 0 16.57-12.46 30.24-12.45 13.68-30.85 13.68Zm0 167.08q-17.11 0-30.21-14.4-13.1-14.4-13.1-32.29 0-17.57 13.1-30.75t30.71-13.18q17.6 0 30.2 13.03 12.61 13.03 12.61 31.4 0 17.39-12.46 31.79-12.45 14.4-30.85 14.4Z" />
                     </svg>
                 </button>
+                <p class="title title_sm" id="product_type_display_title"></p>
             </div>
         </div>
 
-
-        <!-- Add Product Type Modal -->
-        <div class="po_modal_cont" id="add_product_type_modal">
-            <div class="po_modal_inner">
+        <!-- Product type Menu -->
+        <div class="po_modal_cont " id="product_type_menu_modal">
+            <div class="po_modal_inner product_type_menu">
                 <div class="po_modal_header">
-                    <p class="title title_md">Add Product Type</p>
-                    <button id="add_product_type_modal_close" class="icon_button subtle">
+                    <p class="title title_md">Product Types</p>
+                    <button id="product_type_menu_modal_close" class="icon_button subtle">
                         <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
                             <path
                                 d="M481-424.85 315.08-257.92q-13.31 13.3-27.89 12.5-14.57-.81-28.27-14.5-12.69-13.7-12.19-27.58.5-13.88 13.19-27.58L423.85-480 257.92-647.92q-12.3-13.31-12-27.39.31-14.07 13-27.77 13.7-13.69 28.58-14.19 14.88-.5 28.58 13.19L481-537.15l163.92-166.93q13.31-13.3 28.39-13 15.07.31 28.77 14 12.69 13.7 12.19 27.58-.5 13.88-13.19 27.58L536.15-480l164.93 165.92q12.3 12.31 13 26.39.69 14.07-12 27.77-13.7 13.69-28.58 14.19-14.88.5-28.58-13.19L481-424.85Z" />
                         </svg>
                     </button>
                 </div>
-                <div class="po_modal_body">
+
+                <div class="po_modal_body po_tab_navigation scrollable" id="po_tab_navigation_bar">
+                    <!-- this is where the product types will be dynamically added -->
+                    
+
+                </div>
+
+                <div class="po_menu_add_new_type_form">
                     <div class="po_form_group">
-                        <label for="product_type_name" class="po_form_label">Product Type Name</label>
+                        <label for="product_type_name" class="po_form_label txt_sml">Add New Product Type</label>
                         <input type="text" id="product_type_name" class="po_form_control"
                             placeholder="Enter product type name">
                     </div>
@@ -73,6 +74,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- Add New Option -->
         <div class="po_modal_cont" id="add_new_option_modal">
@@ -128,8 +130,8 @@
                     <div class="po_option_table_row">
                         <div class="po_option_table_cell">
 
-                            <button id="add_new_option_button"
-                                data-tooltip="Add a new Product Option" class="icon_button subtle tooltip_cont">
+                            <button id="add_new_option_button" data-tooltip="Add a new Product Option"
+                                class="icon_button subtle tooltip_cont">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                     width="20px">
                                     <path
@@ -148,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="po_option_table_body" id="product_types_table">
+                <div class="po_option_table_body" id="product_type_options_table">
                     <!-- these will be dynamically added -->
 
                 </div>
