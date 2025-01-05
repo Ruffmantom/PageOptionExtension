@@ -70,7 +70,7 @@ const LOCAL_STORAGE_KEY = 'eRXhSBUBMaQgkqKApzZXMPyGeFbcTyprTxKt3Mwz92GPx2mJ2XbNY
 
 // render functions
 const renderDom = () => {
-    // $(po_tab_navigation_bar).empty();
+    $(po_tab_navigation_bar).empty();
     //empty the option table   
     $(product_type_options_table).empty();
     // render the current product type

@@ -44,11 +44,15 @@
     padding:0 5px 0 10px;
     position: relative;
     display: flex;
-    background-color:var(--container-bkg-2);
+    /* background-color:var(--container-bkg-2); */
     border-radius: var(--border-radius-small);
     width: 100%;
     gap: 5px;
     justify-content: space-between;
+}
+
+.po_menu_tab_item:not(:last-child){
+    margin-bottom: 5px;
 }
 
 .po_menu_tab_item_name_cont{
@@ -64,6 +68,7 @@
     height: 100%;
     width: 80%;
     z-index: 5;
+    cursor: pointer;
 }
 
 .po_menu_tab_item_name{

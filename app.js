@@ -38,11 +38,13 @@ $(() => {
     });
 
     // need to add listener for the tab navigation
-    $(document).on('click', '.po_tab_item', function () {
+    $(document).on('click', '.po_menu_tab_item_btn', function () {
         let tabId = $(this).data('tabid');
         globalStore.currentProductType = tabId;
         saveToLocalStorage();
         renderDom();
+        // close the menu
+        $(product_type_menu_modal).removeClass("active")
     })
 
     // add new product type
@@ -62,7 +64,7 @@ $(() => {
             })
             globalStore.currentProductType = newId;
             saveToLocalStorage();
-            $(add_product_type_modal).removeClass("active")
+            $(product_type_menu_modal).removeClass("active")
             renderDom();
             // clear the input
             newProductTypeNameValue = "";
