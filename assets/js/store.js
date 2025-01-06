@@ -6,56 +6,62 @@ const getDefaultGlobalStore = () => ({
             options: [
                 {
                     id: "3055988949-3394104210-2780396807",
-                    index: 1,
-                    name: "Paper",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Paper",
+                    reName: "",
+                    sortId: 1,
+                    newSortId: null
                 },
                 {
                     id: "1144022491-8285567828-7690050362",
-                    index: 2,
-                    name: "Format",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Format",
+                    reName: "",
+                    sortId: 2,
+                    newSortId: 0
                 },
                 {
                     id: "3009128949-3394104210-2799646807",
-                    index: 3,
-                    name: "Pages",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Pages",
+                    reName: "",
+                    sortId: 3,
+                    newSortId: 0,
                 },
                 {
                     id: "1144022491-8127942284-7690050362",
-                    index: 4,
-                    name: "Colors",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Colors",
+                    reName: "",
+                    sortId: 4,
+                    newSortId: 0,
                 },
                 {
                     id: "1337822491-8280642284-7690050362",
-                    index: 5,
-                    name: "Book Binding",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Book Binding",
+                    reName: "",
+                    sortId: 5,
+                    newSortId: 0,
                 },
                 {
                     id: "3009128949-3394104210-2762976807",
-                    index: 6,
-                    name: "Refinement",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Refinement",
+                    reName: "",
+                    sortId: 6,
+                    newSortId: 0,
                 },
                 {
                     id: "1144022491-825972284-7690050362",
-                    index: 7,
-                    name: "Finishing",
-                    sortNumber: 0,
-                    rename: ""
+                    isDeleteAble: true,
+                    optionName: "Finishing",
+                    reName: "",
+                    sortId: 7,
+                    newSortId: 0,
                 },
             ]
         },
-
     ],
     settings: {
         useIndexInName: false,

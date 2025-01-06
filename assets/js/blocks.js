@@ -1,6 +1,6 @@
-const createProductTypeTab = (data,currentProductTypeId)=>{
+const createProductTypeTab = (data, currentProductTypeId) => {
     return `
-        <div class="po_menu_tab_item  ${currentProductTypeId === data.id? "active":''}">
+        <div class="po_menu_tab_item  ${currentProductTypeId === data.id ? "active" : ''}">
             <div class="po_menu_tab_item_btn" title="${data.name}" data-tabid="${data.id}"></div>
 
             <div class="po_menu_tab_item_name_cont">
@@ -47,17 +47,17 @@ const createProductOptionHtml = (option) => {
         </div>
 
         <div class="po_option_table_cell">
-            <span class="po_option_index txt_sml txt_sml_50">${option.index}</span><input class="po_table_option_input p_l_20"
-                value="${option.name}" type="text" placeholder="Option Name">
+            <span class="po_option_index txt_sml txt_sml_50">${option.sortId}</span><input class="po_table_option_input p_l_20"
+                value="${option.optionName}" type="text" placeholder="Option Name">
         </div>
         
         <div class="po_option_table_cell">
-            <input class="po_table_option_input" value="${option.sortNumber}" type="text" placeholder="0" min="0"
+            <input data-type="po_sortid" class="po_table_option_input" value="${option.newSortId ? option.newSortId : 0}" type="text" placeholder="0" min="0"
                 max="50">
         </div>
         
         <div class="po_option_table_cell">
-            <input class="po_table_option_input" value="${option.rename}" type="text" placeholder="Option Name">
+            <input data-type="po_rename" class="po_table_option_input" value="${option.reName}" type="text" placeholder="Option Name">
         </div>
 
     </div>

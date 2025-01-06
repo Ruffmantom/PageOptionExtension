@@ -86,10 +86,11 @@ $(() => {
             let newIndex = currentProductType.options.length + 1;
             currentProductType.options.push({
                 id: newId,
-                index: newIndex,
-                name: newOptionNameValue,
-                sortNumber: 0,
-                rename: ""
+                isDeleteAble: true,
+                optionName: newOptionNameValue,
+                reName: "",
+                sortId: newIndex,
+                newSortId: null
             })
             saveToLocalStorage();
             $(add_new_option_modal).removeClass("active")
@@ -113,37 +114,59 @@ $(() => {
         renderDom();
     })
 
-    // need to capture if user types in a rename
+    /*
+    // option keys
+        id
+        isDeleteAble
+        optionName
+        reName
+        sortId
+        newSortId
+    */
+    // need to capture if user types in a rename or sort number
     $(document).on('keyup', '.po_table_option_input', function () {
         let optionId = $(this).closest('.po_option').data('optionid');
-        let inputType = $(this).attr('type');
+        let inputType = $(this).data('type');
         let inputValue = $(this).val();
+        console.log('optionId: ', optionId, '\n\ninputType: ', inputType, '\n\ninputValue: ', inputValue);
         let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
         let currentOption = currentProductType.options.find(option => option.id === optionId);
-        if (inputType === 'text') {
-            currentOption.rename = inputValue;
-        } else {
-            currentOption.sortNumber = inputValue;
+        console.log('currentOption: ', currentOption);
+
+        if (inputType === 'po_rename') {
+            currentOption.reName = inputValue;
+        } else if (inputType === 'po_sortid') {
+            currentOption.newSortId = inputValue;
         }
         saveToLocalStorage();
     })
+
+
+
+
+    // copy the names output
+    $(po_copy_names_output_btn).click((e) => {
+        e.preventDefault();
+        // let output = generateNameOutput();
+        let copyOutput = generateOutputs('name');
+        console.log(copyOutput);
+        copyToClipboard(copyOutput);
+        // console.log(output);
+        // copyToClipboard(output);
+        notify("Copied Names to clipboard!", "success");
+    })
+
+    // need to capture if the user 
 
     // copy the order output
     $(po_copy_order_output_btn).click((e) => {
         e.preventDefault();
         // let output = generateOrderOutput();
+        let copyOutput = generateOutputs('sort');
+        console.log(copyOutput);
+        copyToClipboard(copyOutput);
         // copyToClipboard(output);
         notify("Copied the order to the clipboard!", "success");
     })
-    // copy the names output
-    $(po_copy_names_output_btn).click((e) => {
-        e.preventDefault();
-        let output = generateNameOutput();
-        console.log(output);
-        // copyToClipboard(output);
-        notify("Copied Names to clipboard!", "success");
-    })
-
-
 
 })
