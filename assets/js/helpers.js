@@ -91,7 +91,7 @@ const generateOutputs = (type) => {
     }
 
 
-    console.log("Names: ", nameOutput, "\n\n Names: ", sortOutput);
+    // console.log("Names: ", nameOutput, "\n\n Names: ", sortOutput);
 
     // now return based on type
     if (type === "name") {
@@ -104,17 +104,10 @@ const generateOutputs = (type) => {
 
 
 // now use "copy_input_hidden" to copy the output
-function copyToClipboard(text) {
-    // Create a hidden input element
-    const input = document.createElement('input');
-    // Set the input value to the text
-    input.value = text;
-    // Append the input to the body
-    document.body.appendChild(input);
-    // Select the input
-    input.select();
-    // Copy the selected text
-    document.execCommand('copy');
-    // Remove the input
-    document.body.removeChild(input);
+function copyToClipboard(output) {
+    navigator.clipboard.writeText(output).then(() => {
+        console.log('Text copied to clipboard', output);
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
 }

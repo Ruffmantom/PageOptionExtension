@@ -10,7 +10,7 @@ const createProductTypeTab = (data, currentProductTypeId) => {
             </div>
 
             <div class="po_menu_tab_item_action_group">
-                <button class="icon_button sml subtle tooltip_cont" data-tooltip="Edit Product Type Name" data-tabid="${data.id}">
+                <button class="po_edit_product_type_name_btn icon_button sml subtle tooltip_cont" data-tooltip="Edit Product Type Name" data-tabid="${data.id}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                         width="20px">
                         <path
@@ -18,7 +18,7 @@ const createProductTypeTab = (data, currentProductTypeId) => {
                     </svg>
                 </button>
 
-                <button class="icon_button sml danger tooltip_cont" data-tooltip="Delete Product Type" data-tabid="${data.id}">
+                <button class="po_delete_product_type_btn icon_button sml danger tooltip_cont" data-tooltip="Delete Product Type" data-tabid="${data.id}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                         width="20px">
                         <path

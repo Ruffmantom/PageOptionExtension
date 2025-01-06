@@ -8,7 +8,7 @@
     margin: auto;
 }
 
-#product_type_menu_modal{
+#product_type_menu_modal {
     flex-direction: column;
     align-items: flex-start;
 }
@@ -27,40 +27,61 @@
     border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
 }
 
-.po_menu_tab_item.active::before {
+.po_menu_tab_item::before {
     content: '';
     position: absolute;
-    height: 80%;
+    height: 0%;
     width: 3px;
-    left:4px;
+    left: 4px;
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--color-primary);
     border-radius: 10pc;
+    transition: opacity 150ms ease-out;
 }
 
-.po_menu_tab_item{
-    padding:0 5px 0 10px;
+.po_menu_tab_item.active::before {
+    opacity: 1;
+    height: 60%;
+    transition: opacity 150ms ease-in;
+}
+
+.po_menu_tab_item.active:hover::before {
+    opacity: 1;
+    height: 70%;
+    transition: opacity 150ms ease-in;
+}
+
+.po_menu_tab_item.active {
+    outline: 2px solid var(--container-bkg-1);
+}
+
+.po_menu_tab_item:hover {
+    outline: 2px solid var(--container-bkg-1);
+}
+
+
+.po_menu_tab_item {
+    padding: 0 5px 0 10px;
     position: relative;
     display: flex;
-    /* background-color:var(--container-bkg-2); */
     border-radius: var(--border-radius-small);
     width: 100%;
     gap: 5px;
     justify-content: space-between;
 }
 
-.po_menu_tab_item:not(:last-child){
+.po_menu_tab_item:not(:last-child) {
     margin-bottom: 5px;
 }
 
-.po_menu_tab_item_name_cont{
+.po_menu_tab_item_name_cont {
     display: flex;
     align-items: center;
     max-width: 75%;
 }
 
-.po_menu_tab_item_btn{
+.po_menu_tab_item_btn {
     position: absolute;
     left: 0;
     top: 0;
@@ -70,14 +91,16 @@
     cursor: pointer;
 }
 
-.po_menu_tab_item_name{
+.po_menu_tab_item_name {
     max-width: 100%;
     padding: 8px 10px;
 }
-.po_menu_tab_item_rename_input{
+
+.po_menu_tab_item_rename_input {
     display: none;
 }
-.po_menu_tab_item_action_group{
+
+.po_menu_tab_item_action_group {
     display: flex;
     gap: 5px;
     align-items: center;
@@ -99,12 +122,14 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 #po_option_table {
     flex-grow: 1;
     overflow-y: auto;
     padding-right: 5px;
     margin-top: 5px;
 }
+
 .po_option_table_row {
     display: flex;
     gap: 10px;
@@ -152,8 +177,8 @@
     align-items: center;
 }
 
-.po_tab_navigation{
-flex-grow: 1;
+.po_tab_navigation {
+    flex-grow: 1;
 }
 
 .po_tab_item {
@@ -190,6 +215,7 @@ flex-grow: 1;
     width: 70%;
     transition: all 150ms ease-in;
 }
+
 .po_copy_output_container {
     padding-top: 7px;
 }

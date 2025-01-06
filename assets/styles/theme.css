@@ -168,6 +168,11 @@ input:focus-within {
     font-size: 20px;
 }
 
+.hidden{
+    opacity: 0;
+    width: 0;
+    position: absolute;
+}
 /* truncate single line text */
 .truncate {
     white-space: nowrap;

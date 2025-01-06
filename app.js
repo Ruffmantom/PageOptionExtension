@@ -147,12 +147,9 @@ $(() => {
     // copy the names output
     $(po_copy_names_output_btn).click((e) => {
         e.preventDefault();
-        // let output = generateNameOutput();
         let copyOutput = generateOutputs('name');
         console.log(copyOutput);
         copyToClipboard(copyOutput);
-        // console.log(output);
-        // copyToClipboard(output);
         notify("Copied Names to clipboard!", "success");
     })
 
@@ -161,12 +158,48 @@ $(() => {
     // copy the order output
     $(po_copy_order_output_btn).click((e) => {
         e.preventDefault();
-        // let output = generateOrderOutput();
         let copyOutput = generateOutputs('sort');
         console.log(copyOutput);
         copyToClipboard(copyOutput);
-        // copyToClipboard(output);
         notify("Copied the order to the clipboard!", "success");
     })
+
+    // when the add option button opens the modal, focus on the input
+    $(add_new_option_button).click(() => {
+        $(option_name_input).focus();
+    })
+
+    // clear option name input on close
+    $(add_new_option_modal_close).click(() => {
+        $(option_name_input).val("");
+    })
+
+    // delete the dynamically added product type from container #po_tab_navigation_bar
+    // if product type is set as the current product type, set the current to the one before it if there is nothing before then check after. if there is nothing then clear the current product type id in state.
+
+    // po_delete_product_type_btn
+    $(document).on('click', '.po_delete_product_type_btn', function () {
+        let productTypeId = $(this).data('tabid');
+        console.log('deleting product type', productTypeId);
+        // remove from the store
+        globalStore.productTypes = globalStore.productTypes.filter(pt => pt.id !== productTypeId);
+        // if the current product type is the one being deleted
+        if (globalStore.currentProductType === productTypeId) {
+            let currentProductTypeIndex = globalStore.productTypes.findIndex(pt => pt.id === productTypeId);
+            if (currentProductTypeIndex > 0) {
+                globalStore.currentProductType = globalStore.productTypes[currentProductTypeIndex - 1].id;
+            } else if (currentProductTypeIndex === 0 && globalStore.productTypes.length > 0) {
+                globalStore.currentProductType = globalStore.productTypes[currentProductTypeIndex + 1].id;
+            } else {
+                globalStore.currentProductType = null;
+            }
+        }
+
+        saveToLocalStorage();
+        renderDom();
+    })
+
+    // edit the product type name
+    // po_edit_product_type_name_btn
 
 })
