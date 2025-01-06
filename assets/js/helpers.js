@@ -78,14 +78,14 @@ const generateOutputs = (type) => {
         // create outputs
         output.forEach(p => {
             sortOutput.push(p.sortId)
-            let nameFormat = `${p.optionName}:${globalStore.settings.useIndexInName ? `${p.newSortId}. ${p.rename ? p.rename : p.optionName}` : `${p.rename ? p.rename : p.optionName}`};`
+            let nameFormat = `${p.optionName}:${globalStore.settings.useIndexInName ? `${p.newSortId}. ${p.reName ? p.reName : p.optionName}` : `${p.reName ? p.reName : p.optionName}`};`
             nameOutput.push(nameFormat)
         })
     } else {
         // default 
         currentProductType.options.forEach(p => {
             sortOutput.push(p.sortId)
-            let nameFormat = `${p.optionName}:${globalStore.settings.useIndexInName ? `${p._id}. ${p.rename ? p.rename : p.optionName}` : `${p.rename ? p.rename : p.optionName}`};`
+            let nameFormat = `${p.optionName}:${globalStore.settings.useIndexInName ? `${p._id}. ${p.reName ? p.reName : p.optionName}` : `${p.reName ? p.reName : p.optionName}`};`
             nameOutput.push(nameFormat)
         })
     }
