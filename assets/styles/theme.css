@@ -283,7 +283,7 @@ input:focus-within {
 
 #po_notification_popper {
     position: absolute;
-    z-index: 9;
+    z-index: 999;
     top: -500px;
     left: 50%;
     transform: translate(-50%, 0);

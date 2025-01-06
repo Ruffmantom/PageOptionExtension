@@ -53,6 +53,31 @@
             </div>
         </div>
 
+        <!-- Add Edit product type modal -->
+        <div class="po_modal_cont" id="edit_product_type_modal">
+            <div class="po_modal_inner">
+                <div class="po_modal_header">
+                    <p class="title title_md">Add Option</p>
+                    <button id="edit_product_type_modal_close" class="icon_button subtle">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
+                            <path
+                                d="M481-424.85 315.08-257.92q-13.31 13.3-27.89 12.5-14.57-.81-28.27-14.5-12.69-13.7-12.19-27.58.5-13.88 13.19-27.58L423.85-480 257.92-647.92q-12.3-13.31-12-27.39.31-14.07 13-27.77 13.7-13.69 28.58-14.19 14.88-.5 28.58 13.19L481-537.15l163.92-166.93q13.31-13.3 28.39-13 15.07.31 28.77 14 12.69 13.7 12.19 27.58-.5 13.88-13.19 27.58L536.15-480l164.93 165.92q12.3 12.31 13 26.39.69 14.07-12 27.77-13.7 13.69-28.58 14.19-14.88.5-28.58-13.19L481-424.85Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="po_modal_body">
+                    <div class="po_form_group">
+                        <label for="option_name_input" class="po_form_label">Edit Product Type Name</label>
+                        <input type="text" id="product_type_edit_name_input" class="po_form_control"
+                            placeholder="Enter an option name">
+                    </div>
+                    <div class="po_form_group">
+                        <button id="edit_product_type_save_btn" data-editpt="" class="btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Add New Option -->
         <div class="po_modal_cont" id="add_new_option_modal">
@@ -135,21 +160,26 @@
 
                         <button id="add_new_option_button" data-tooltip="Add a new Product Option"
                             class="icon_button subtle tooltip_cont">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
-                                width="20px">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px">
                                 <path
                                     d="M441-442H267q-16.05 0-27.52-11.42Q228-464.84 228-480.8q0-15.97 11.48-27.58Q250.95-520 267-520h174v-174q0-16.05 11.42-27.52Q463.84-733 479.8-733q15.97 0 27.58 11.48Q519-710.05 519-694v174h174q16.05 0 27.52 11.42Q732-497.16 732-481.2q0 15.97-11.48 27.58Q709.05-442 693-442H519v174q0 16.05-11.42 27.52Q496.16-229 480.2-229q-15.97 0-27.58-11.48Q441-251.95 441-268v-174Z" />
                             </svg>
                         </button>
                     </div>
                     <div class="po_option_table_cell">
-                        <p class="title_sml">Option Name</p>
+                        <p class="txt_sml">Option Name</p>
                     </div>
                     <div class="po_option_table_cell">
-                        <p class="title_sml">Order</p>
+                        <button id="po_reset_order_column_btn" class="icon_button sml subtle tooltip_cont" data-tooltip="Reset Sort Column" >
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"><path d="M480.54-178q-123.63 0-211.81-88.17-88.19-88.17-88.19-211.77 0-123.6 88.19-213.83Q356.91-782 480.54-782q67.15 0 123.27 30.19 56.11 30.2 97.65 74.04V-743q0-16.05 11.42-27.52Q724.3-782 740.26-782q15.97 0 27.58 11.48 11.62 11.47 11.62 27.52v174.46q0 18.67-13.24 31.91-13.25 13.24-31.91 13.24H559.85q-16.05 0-27.53-11.41-11.47-11.42-11.47-27.39 0-15.96 11.47-27.58 11.48-11.61 27.53-11.61h102q-30.62-43.93-77.7-70.27Q537.08-698 480.54-698q-93 0-157.5 64t-64.5 156q0 93 64.5 157.5t157.5 64.5q74.73 0 133.17-45.62 58.44-45.61 76.29-116.69 4.69-14.92 18.23-23.27 13.54-8.34 29.03-5.5 15.2 2.85 24.59 13 9.38 10.16 7.69 25.08-23.16 100.69-103.2 165.84Q586.3-178 480.54-178Z"/></svg>
+                        </button>
+                        <p class="txt_sml ">Order</p>
                     </div>
                     <div class="po_option_table_cell">
-                        <p class="title_sml">Rename</p>
+                        <button id="po_reset_order_column_btn" class="icon_button sml subtle tooltip_cont" data-tooltip="Reset Sort Column" >
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"><path d="M480.54-178q-123.63 0-211.81-88.17-88.19-88.17-88.19-211.77 0-123.6 88.19-213.83Q356.91-782 480.54-782q67.15 0 123.27 30.19 56.11 30.2 97.65 74.04V-743q0-16.05 11.42-27.52Q724.3-782 740.26-782q15.97 0 27.58 11.48 11.62 11.47 11.62 27.52v174.46q0 18.67-13.24 31.91-13.25 13.24-31.91 13.24H559.85q-16.05 0-27.53-11.41-11.47-11.42-11.47-27.39 0-15.96 11.47-27.58 11.48-11.61 27.53-11.61h102q-30.62-43.93-77.7-70.27Q537.08-698 480.54-698q-93 0-157.5 64t-64.5 156q0 93 64.5 157.5t157.5 64.5q74.73 0 133.17-45.62 58.44-45.61 76.29-116.69 4.69-14.92 18.23-23.27 13.54-8.34 29.03-5.5 15.2 2.85 24.59 13 9.38 10.16 7.69 25.08-23.16 100.69-103.2 165.84Q586.3-178 480.54-178Z"/></svg>
+                        </button>
+                        <p class="txt_sml ">Rename</p>
                     </div>
                 </div>
             </div>

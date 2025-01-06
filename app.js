@@ -137,11 +137,11 @@ $(() => {
             currentOption.reName = inputValue;
         } else if (inputType === 'po_sortid') {
             currentOption.newSortId = inputValue;
+        } else if (inputType === 'po_name') {
+            currentOption.optionName = inputValue;
         }
         saveToLocalStorage();
     })
-
-
 
 
     // copy the names output
@@ -178,11 +178,15 @@ $(() => {
     // if product type is set as the current product type, set the current to the one before it if there is nothing before then check after. if there is nothing then clear the current product type id in state.
 
     // po_delete_product_type_btn
-    $(document).on('click', '.po_delete_product_type_btn', function () {
+    $(document).on('click', '.po_delete_product_type_btn', function (e) {
+        e.preventDefault();
         let productTypeId = $(this).data('tabid');
         console.log('deleting product type', productTypeId);
         // remove from the store
+        let productTypeToDelete = globalStore.productTypes.find(pt => pt.id === productTypeId);
         globalStore.productTypes = globalStore.productTypes.filter(pt => pt.id !== productTypeId);
+        // find product type about to be deleted
+        console.log('productTypeToDelete', productTypeToDelete);
         // if the current product type is the one being deleted
         if (globalStore.currentProductType === productTypeId) {
             let currentProductTypeIndex = globalStore.productTypes.findIndex(pt => pt.id === productTypeId);
@@ -194,12 +198,49 @@ $(() => {
                 globalStore.currentProductType = null;
             }
         }
-
+        // add notification
+        notify(`Product Type: ${productTypeToDelete.name} has been deleted!`, "danger");
         saveToLocalStorage();
         renderDom();
     })
 
     // edit the product type name
     // po_edit_product_type_name_btn
+    // ID of save button 
+    $(document).on('click', '.po_edit_product_type_name_btn', function (e) {
+        e.preventDefault();
+        let productTypeId = $(this).data('tabid');
+        // add the id to the save button with data attribute editpt
+        $(edit_product_type_save_btn).attr('data-editpt', productTypeId);
+        // open the modal
+        $(edit_product_type_modal).addClass("active");
+        // get the product type
+        let productTypeToEdit = globalStore.productTypes.find(pt => pt.id === productTypeId);
+        console.log('editing product type', productTypeToEdit);
+        // set the value of the input to the product type name
+        $(product_type_edit_name_input).val(productTypeToEdit.name);
+    })
 
+    // save the product type name
+    $(edit_product_type_save_btn).click((e) => {
+        e.preventDefault();
+        let newProductTypeName = $(product_type_edit_name_input).val();
+        // get id of product type from button click with data attribute editpt
+        let productTypeId = $(edit_product_type_save_btn).data('editpt');
+        console.log('saving product type name', newProductTypeName, productTypeId);
+        // find product type to update
+        let currentProductType = globalStore.productTypes.find(pt => pt.id === productTypeId);
+
+        if (newProductTypeName.length > 0) {
+            currentProductType.name = newProductTypeName;
+            saveToLocalStorage();
+            renderDom();
+            $(edit_product_type_modal).removeClass("active");
+        }
+    })
+
+    // close the edit product type modal
+    $(edit_product_type_modal_close).click(() => {
+        $(edit_product_type_modal).removeClass("active");
+    })
 })

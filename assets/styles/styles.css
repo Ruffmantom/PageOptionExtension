@@ -52,12 +52,9 @@
     transition: opacity 150ms ease-in;
 }
 
-.po_menu_tab_item.active {
-    outline: 2px solid var(--container-bkg-1);
-}
 
 .po_menu_tab_item:hover {
-    outline: 2px solid var(--container-bkg-1);
+    background-color: var(--container-bkg-1);
 }
 
 
