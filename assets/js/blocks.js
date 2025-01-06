@@ -47,7 +47,7 @@ const createProductOptionHtml = (option) => {
         </div>
 
         <div class="po_option_table_cell">
-            <span class="po_option_index txt_sml txt_sml_50">${option.sortId}</span><input class="po_table_option_input p_l_20"
+            <span class="po_option_index txt_sml txt_sml_50">${option.sortId}</span><input class="po_table_option_input p_l_25"
                 value="${option.optionName}" type="text" placeholder="Option Name">
         </div>
         
