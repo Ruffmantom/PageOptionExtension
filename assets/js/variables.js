@@ -6,6 +6,9 @@ const create_product_type_btn = $("#create_product_type_btn")
 const add_new_option_button = $("#add_new_option_button")
 const create_new_option_btn = $("#create_new_option_btn")
 const clear_all_data_btn = $("#clear_all_data_btn")
+const po_copy_order_output_btn = $("#po_copy_order_output_btn")
+const po_copy_names_output_btn = $("#po_copy_names_output_btn")
+
 // close btns
 const settings_modal_button_close = $("#settings_modal_button_close")
 const product_type_menu_modal_close = $("#product_type_menu_modal_close")

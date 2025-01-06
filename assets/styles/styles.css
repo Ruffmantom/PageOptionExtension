@@ -90,7 +90,7 @@
     flex-direction: column;
     margin-top: 7px;
     flex-grow: 1;
-    /* overflow-y: auto; */
+    max-height: 340px;
 }
 
 #intro_text {
@@ -100,7 +100,12 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
+#po_option_table {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-top: 5px;
+}
 .po_option_table_row {
     display: flex;
     gap: 10px;
@@ -131,12 +136,10 @@
 
 
 .po_option_table_cell:nth-child(even) {
-    min-width: calc(100%/2.5);
+    min-width: calc(100%/2.7);
 }
 
-.po_option_table_body {
-    padding-top: 10px;
-}
+
 
 .po_option_index {
     position: absolute;
@@ -187,4 +190,7 @@ flex-grow: 1;
     opacity: 1;
     width: 70%;
     transition: all 150ms ease-in;
+}
+.po_copy_output_container {
+    padding-top: 7px;
 }

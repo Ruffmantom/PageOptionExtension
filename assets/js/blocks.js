@@ -37,7 +37,7 @@ const createProductOptionHtml = (option) => {
     <div data-optionid="${option.id}" class="po_option po_option_table_row">
         
         <div class="po_option_table_cell">
-            <button data-tooltip="Delete Option" class="icon_button danger tooltip_cont">
+            <button data-tooltip="Delete Option" data-optionid="${option.id}" class="delete_option_btn icon_button danger tooltip_cont">
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                     width="20px">
                     <path

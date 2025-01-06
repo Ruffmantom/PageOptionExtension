@@ -100,6 +100,50 @@ $(() => {
         }
     })
 
+    // delete the option
+    $(document).on('click', '.delete_option_btn', function () {
+        let optionId = $(this).data('optionid');
+        console.log('deleting option', optionId);
+        // make option fade out
+        $(`div[data-optionid="${optionId}"]`).fadeOut(150);
+        // remove from the store
+        let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
+        currentProductType.options = currentProductType.options.filter(option => option.id !== optionId);
+        saveToLocalStorage();
+        renderDom();
+    })
+
+    // need to capture if user types in a rename
+    $(document).on('keyup', '.po_table_option_input', function () {
+        let optionId = $(this).closest('.po_option').data('optionid');
+        let inputType = $(this).attr('type');
+        let inputValue = $(this).val();
+        let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
+        let currentOption = currentProductType.options.find(option => option.id === optionId);
+        if (inputType === 'text') {
+            currentOption.rename = inputValue;
+        } else {
+            currentOption.sortNumber = inputValue;
+        }
+        saveToLocalStorage();
+    })
+
+    // copy the order output
+    $(po_copy_order_output_btn).click((e) => {
+        e.preventDefault();
+        // let output = generateOrderOutput();
+        // copyToClipboard(output);
+        notify("Copied the order to the clipboard!", "success");
+    })
+    // copy the names output
+    $(po_copy_names_output_btn).click((e) => {
+        e.preventDefault();
+        let output = generateNameOutput();
+        console.log(output);
+        // copyToClipboard(output);
+        notify("Copied Names to clipboard!", "success");
+    })
+
 
 
 })

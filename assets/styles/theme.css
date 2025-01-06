@@ -269,3 +269,24 @@ input:focus-within {
     background-color: var(--color-primary);
     cursor: w-resize;
 }
+
+#po_notification_popper {
+    position: absolute;
+    z-index: 9;
+    top: -500px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 3px 7px;
+    border-radius: var(--border-radius-small);
+    max-width: 300px;
+    transition: top 300ms ease-out, opacity 300ms ease-out;
+    opacity: 0;
+}
+
+#po_notification_popper.active {
+    top: 10px;
+    opacity: 1;
+    transition: top 300ms ease-in, opacity 300ms ease-in;
+}
