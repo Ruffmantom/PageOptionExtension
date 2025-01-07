@@ -222,3 +222,18 @@
 .po_copy_output_container {
     padding-top: 7px;
 }
+
+#release_notes_modal>.po_modal_inner{
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#release_notes_body{
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.release_message{
+    max-height: 100%;
+}

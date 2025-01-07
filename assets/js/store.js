@@ -65,8 +65,10 @@ const getDefaultGlobalStore = () => ({
     ],
     settings: {
         useIndexInName: false,
+        enable_update_notifications: true,
     },
     currentProductType: 0,
+    releaseNotes: [],
 });
 
 let globalStore = getDefaultGlobalStore(); // initial in-memory default
@@ -98,11 +100,57 @@ const renderDom = () => {
     })
 }
 
+// create updates if not there
+const initUpdates = () => {
+    if (globalStore.releaseNotes === null || globalStore.releaseNotes === undefined) {
+        // create variable
+        globalStore.releaseNotes = []
+    }
+    // check if settings allow for popup
+    if (globalStore.settings.enable_update_notifications === null || globalStore.settings.enable_update_notifications === undefined) {
+        // create variable
+        globalStore.settings.enable_update_notifications = true
+    }
+    // add any new updates to global
+    // First, create a Set of existing IDs for faster lookup
+    const existingIds = new Set(globalStore.releaseNotes.map(u => u.id));
+    // Filter out new updates from releases where the id does not exist in existingIds
+    const newUpdates = releases.filter(u => !existingIds.has(u.id));
+    // Now, add these new updates to globalStore.releaseNotes
+    globalStore.releaseNotes = [...globalStore.releaseNotes, ...newUpdates.map(u => ({ ...u }))];
+
+    // save to local
+    saveToLocalStorage()
+}
+// render modal
+const renderUpdates = () => {
+    $("#release_notes_body").text("")
+    // check settings first
+    if (globalStore.settings.enable_update_notifications) {
+        // show latest update
+        latestUpdate = findMostRecentRelease(globalStore.releaseNotes)
+        // check if update has been userHasRead
+        if (!latestUpdate.userHasRead) {
+            let greeting = returnGreeting()
+            $("#release_notes_header").text(greeting)
+            $("#release_notes_body").append(latestUpdate.message)
+            $("#release_notes_modal").addClass("active")
+        }
+    }
+}
+
+const loadSettings = () => {
+    /*
+        useIndexInName
+        enable_update_notifications
+    */
+
+    // load dom with settings
+    $(add_sort_id_setting_checkbox).prop('checked', globalStore.settings.useIndexInName);
+    $(enable_release_notes_checkbox).prop('checked', globalStore.settings.enable_update_notifications);
+}
+
 const loadApp = async () => {
-    // eventually this will load in from local storage
-    // if its not in local then it will be initialized
-    // po_option_table.hide();
-    // globalStore = exampleData;
     await loadFromLocalStorage();
 
     if (globalStore.productTypes.length > 0) {
@@ -120,6 +168,11 @@ const loadApp = async () => {
         $(po_option_table_head).hide();
         $(po_option_table).hide();
     }
+    // load settings
+    loadSettings()
+    // init updates
+    initUpdates()
+    renderUpdates()
 }
 
 const saveToLocalStorage = () => {
@@ -154,7 +207,7 @@ const clearAllData = (reload) => {
     }
 }
 
-const clearNoDataContent = ()=>{
+const clearNoDataContent = () => {
     $(intro_text).hide();
     // hide the table
     $(po_option_table_head).show();

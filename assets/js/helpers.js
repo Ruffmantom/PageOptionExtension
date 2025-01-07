@@ -111,3 +111,41 @@ function copyToClipboard(output) {
         console.error('Failed to copy text: ', err);
     });
 }
+
+
+// most recent Update
+const findMostRecentRelease = (array) => {
+    // Get the current date with time set to 00:00:00 for comparison
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    // Convert the date strings to Date objects and filter out future dates
+    const validDates = array
+        .map((element) => {
+            return {
+                ...element,
+                dateObj: new Date(element.dateIssued)
+            };
+        })
+        .filter((element) => element.dateObj <= currentDate);
+
+    // Sort the dates in descending order
+    validDates.sort((a, b) => b.dateObj - a.dateObj);
+
+    // Return the most recent date object, or null if none are valid
+    return validDates.length > 0 ? validDates[0] : null;
+}
+
+
+const returnGreeting = () => {
+    let currentTime = new Date()
+    const hour = currentTime.getHours();
+    // console.log("Current Hour: ", hours)
+    if (hour <= 11) {
+        return "Good Morning!"
+    } else if (hour <= 17) {
+        return "Good Afternoon!"
+    } else {
+        return "Good Evening!"
+    }
+}

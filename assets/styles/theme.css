@@ -50,6 +50,17 @@ body {
 
 }
 
+ul,ol{
+    list-style: inside;
+    padding-left: 10px;
+}
+.release_message a{
+    color: var(--color-primary);
+}
+.release_message a:hover{
+    color: var(--color-primary-40);
+    text-decoration: underline;
+}
 
 input,
 button,
@@ -123,6 +134,15 @@ input {
 
 input:focus-within {
     box-shadow: inset 0px 0px 0px 2px var(--color-primary);
+}
+.po_form_group_checkbox_cont{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.po_checkbox_input{
+    height: 20px;
+    width: 20px;
 }
 
 .btn.subtle {
@@ -281,7 +301,11 @@ input:focus-within {
 
 .scrollable::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-primary);
-    cursor: w-resize;
+    cursor: grab;
+}
+.scrollable.scroll_y::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary);
+    cursor: grab;
 }
 
 #po_notification_popper {

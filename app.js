@@ -242,7 +242,7 @@ $(() => {
             saveToLocalStorage();
             renderDom();
             $(edit_product_type_modal).removeClass("active");
-        }else{
+        } else {
             notify('Please enter a name.')
             return
         }
@@ -292,5 +292,40 @@ $(() => {
         notify("All saved data has been reset and removed.", "success")
         clearAllData(false)
     })
+
+
+    // close and acknowledge
+    release_notes_modal_close.on('click', (e) => {
+        e.preventDefault()
+        $("#release_notes_modal").removeClass("active")
+        // find update
+        globalStore.releaseNotes.forEach(u => {
+            if (u.id === latestUpdate.id) {
+                u.userHasRead = true
+            }
+        });
+
+        // save to local
+        saveToLocalStorage()
+    })
+
+    // settings actions
+    $(add_sort_id_setting_checkbox).change(function () {
+        if (this.checked) {
+            globalStore.settings.useIndexInName = true
+        } else {
+            globalStore.settings.useIndexInName = false
+        }
+        saveToLocalStorage()
+    });
+
+    $(enable_release_notes_checkbox).change(function () {
+        if (this.checked) {
+            globalStore.settings.enable_update_notifications = true
+        } else {
+            globalStore.settings.enable_update_notifications = false
+        }
+        saveToLocalStorage()
+    });
 
 })

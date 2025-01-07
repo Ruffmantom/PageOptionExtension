@@ -30,7 +30,7 @@ const createProductTypeTab = (data, currentProductTypeId) => {
 
 
 const createProductOptionHtml = (option) => {
-    console.log('about to render option', option)
+    // console.log('about to render option', option)
     return `
     <div data-optionid="${option.id}" class="po_option po_option_table_row">
         

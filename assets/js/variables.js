@@ -40,6 +40,17 @@ const product_type_name = $("#product_type_name")
 const option_name_input = $("#option_name_input")
 const product_type_edit_name_input = $("#product_type_edit_name_input")
 
+// Checkboxes
+const add_sort_id_setting_checkbox = $("#add_sort_id_setting_checkbox")
+const enable_release_notes_checkbox = $("#enable_release_notes_checkbox")
+
 // variables
 let newProductTypeNameValue = "";
 let newOptionNameValue = "";
+
+// Release notes
+const release_notes_modal = $('#release_notes_modal')
+const release_notes_header = $('#release_notes_header')
+const release_notes_modal_close = $('#release_notes_modal_close')
+const release_notes_body = $('#release_notes_body')
+let latestUpdate = null
