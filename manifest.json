@@ -23,6 +23,9 @@
       "js": [
         "./lib/jquery.js",
         "./app.js",
+        "./assets/release/releaseNotes.js",
+        "./assets/js/visuals.js",
+        "./assets/js/variables.js",
         "./assets/js/blocks.js",
         "./assets/js/helpers.js",
         "./assets/js/store.js"

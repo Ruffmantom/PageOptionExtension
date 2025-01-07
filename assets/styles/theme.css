@@ -286,7 +286,7 @@ input:focus-within {
 
 #po_notification_popper {
     position: absolute;
-    z-index: 999;
+    z-index: -1;
     left: 50%;
     transform: translate(-50%, -20px);
     background-color: var(--color-primary);
@@ -299,6 +299,7 @@ input:focus-within {
 }
 
 #po_notification_popper.active {
+    z-index: 999;
     transform: translate(-50%, 0);
     opacity: 1;
     transition: transform 150ms ease-in, opacity 150ms ease-in;

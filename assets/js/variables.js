@@ -20,10 +20,12 @@ const edit_product_type_modal_close = $("#edit_product_type_modal_close")
 
 // Elements
 const intro_text = $("#intro_text");
+const settings_release_version = $("#settings_release_version");
 const product_type_display_title = $("#product_type_display_title");
 
 // containers
 const po_option_table = $("#po_option_table");
+const po_option_table_head = $("#po_option_table_head");
 const product_type_options_table = $("#product_type_options_table");
 const po_tab_navigation_bar = $("#po_tab_navigation_bar");
 

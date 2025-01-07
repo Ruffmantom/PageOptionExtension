@@ -113,7 +113,7 @@
 }
 
 #intro_text {
-    position: relative;
+    position: absolute;
     text-align: center;
     left: 50%;
     top: 50%;

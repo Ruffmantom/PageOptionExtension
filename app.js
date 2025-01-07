@@ -65,7 +65,11 @@ $(() => {
             globalStore.currentProductType = newId;
             saveToLocalStorage();
             $(product_type_menu_modal).removeClass("active")
+            // incase user has cleared data before creating a new product type
+            clearNoDataContent()
+            // render the dom
             renderDom();
+
             // clear the input
             newProductTypeNameValue = "";
             $(product_type_name).val("");
@@ -102,6 +106,8 @@ $(() => {
     })
 
     // delete the option
+    // Left off ************************************
+    // need to re number all the options that are after the one that is getting removed.
     $(document).on('click', '.delete_option_btn', function () {
         let optionId = $(this).data('optionid');
         // console.log('deleting option', optionId);
@@ -236,6 +242,9 @@ $(() => {
             saveToLocalStorage();
             renderDom();
             $(edit_product_type_modal).removeClass("active");
+        }else{
+            notify('Please enter a name.')
+            return
         }
     })
 
@@ -273,6 +282,15 @@ $(() => {
     $(po_reset_order_column_btn).on('click', function (e) {
         e.preventDefault()
         resetOptionInputs("sortid")
+    })
+
+
+    // clear all data
+    $(clear_all_data_btn).on('click', function (e) {
+        e.preventDefault()
+        $(settings_modal).removeClass("active")
+        notify("All saved data has been reset and removed.", "success")
+        clearAllData(false)
     })
 
 })

@@ -117,6 +117,7 @@ const loadApp = async () => {
         // show the intro text
         $(intro_text).show();
         // hide the table
+        $(po_option_table_head).hide();
         $(po_option_table).hide();
     }
 }
@@ -138,3 +139,24 @@ const loadFromLocalStorage = () => {
         saveToLocalStorage();
     }
 };
+
+const clearAllData = (reload) => {
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+    globalStore.productTypes = []
+    $(intro_text).show();
+    // hide the table
+    $(po_option_table_head).hide();
+    $(po_option_table).hide();
+    $(po_tab_navigation_bar).empty()
+    $(product_type_display_title).text("No Product Type Available.")
+    if (reload) {
+        window.location.reload(true);
+    }
+}
+
+const clearNoDataContent = ()=>{
+    $(intro_text).hide();
+    // hide the table
+    $(po_option_table_head).show();
+    $(po_option_table).show();
+}
