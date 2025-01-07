@@ -85,14 +85,10 @@ const generateOutputs = (type) => {
         // default 
         currentProductType.options.forEach(p => {
             sortOutput.push(p.sortId)
-            let nameFormat = `${p.optionName}:${globalStore.settings.useIndexInName ? `${p._id}. ${p.reName ? p.reName : p.optionName}` : `${p.reName ? p.reName : p.optionName}`};`
+            let nameFormat = `${p.optionName}:${globalStore.settings.useIndexInName ? `${p.sortId}. ${p.reName ? p.reName : p.optionName}` : `${p.reName ? p.reName : p.optionName}`};`
             nameOutput.push(nameFormat)
         })
     }
-
-
-    // // console.log("Names: ", nameOutput, "\n\n Names: ", sortOutput);
-
     // now return based on type
     if (type === "name") {
         return nameOutput.join('');
@@ -106,7 +102,6 @@ const generateOutputs = (type) => {
 // now use "copy_input_hidden" to copy the output
 function copyToClipboard(output) {
     navigator.clipboard.writeText(output).then(() => {
-        // console.log('Text copied to clipboard', output);
     }).catch(err => {
         console.error('Failed to copy text: ', err);
     });
