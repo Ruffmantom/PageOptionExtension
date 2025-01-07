@@ -9,6 +9,8 @@ const clear_all_data_btn = $("#clear_all_data_btn")
 const po_copy_order_output_btn = $("#po_copy_order_output_btn")
 const po_copy_names_output_btn = $("#po_copy_names_output_btn")
 const edit_product_type_save_btn = $("#edit_product_type_save_btn")
+const po_reset_rename_column_btn = $("#po_reset_rename_column_btn")
+const po_reset_order_column_btn = $("#po_reset_order_column_btn")
 
 // close btns
 const settings_modal_button_close = $("#settings_modal_button_close")

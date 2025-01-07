@@ -104,7 +104,7 @@ $(() => {
     // delete the option
     $(document).on('click', '.delete_option_btn', function () {
         let optionId = $(this).data('optionid');
-        console.log('deleting option', optionId);
+        // console.log('deleting option', optionId);
         // make option fade out
         $(`div[data-optionid="${optionId}"]`).fadeOut(150);
         // remove from the store
@@ -128,10 +128,10 @@ $(() => {
         let optionId = $(this).closest('.po_option').data('optionid');
         let inputType = $(this).data('type');
         let inputValue = $(this).val();
-        console.log('optionId: ', optionId, '\n\ninputType: ', inputType, '\n\ninputValue: ', inputValue);
+        // console.log('optionId: ', optionId, '\n\ninputType: ', inputType, '\n\ninputValue: ', inputValue);
         let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
         let currentOption = currentProductType.options.find(option => option.id === optionId);
-        console.log('currentOption: ', currentOption);
+        // console.log('currentOption: ', currentOption);
 
         if (inputType === 'po_rename') {
             currentOption.reName = inputValue;
@@ -148,7 +148,7 @@ $(() => {
     $(po_copy_names_output_btn).click((e) => {
         e.preventDefault();
         let copyOutput = generateOutputs('name');
-        console.log(copyOutput);
+        // console.log(copyOutput);
         copyToClipboard(copyOutput);
         notify("Copied Names to clipboard!", "success");
     })
@@ -159,7 +159,7 @@ $(() => {
     $(po_copy_order_output_btn).click((e) => {
         e.preventDefault();
         let copyOutput = generateOutputs('sort');
-        console.log(copyOutput);
+        // console.log(copyOutput);
         copyToClipboard(copyOutput);
         notify("Copied the order to the clipboard!", "success");
     })
@@ -181,12 +181,12 @@ $(() => {
     $(document).on('click', '.po_delete_product_type_btn', function (e) {
         e.preventDefault();
         let productTypeId = $(this).data('tabid');
-        console.log('deleting product type', productTypeId);
+        // console.log('deleting product type', productTypeId);
         // remove from the store
         let productTypeToDelete = globalStore.productTypes.find(pt => pt.id === productTypeId);
         globalStore.productTypes = globalStore.productTypes.filter(pt => pt.id !== productTypeId);
         // find product type about to be deleted
-        console.log('productTypeToDelete', productTypeToDelete);
+        // console.log('productTypeToDelete', productTypeToDelete);
         // if the current product type is the one being deleted
         if (globalStore.currentProductType === productTypeId) {
             let currentProductTypeIndex = globalStore.productTypes.findIndex(pt => pt.id === productTypeId);
@@ -216,7 +216,7 @@ $(() => {
         $(edit_product_type_modal).addClass("active");
         // get the product type
         let productTypeToEdit = globalStore.productTypes.find(pt => pt.id === productTypeId);
-        console.log('editing product type', productTypeToEdit);
+        // console.log('editing product type', productTypeToEdit);
         // set the value of the input to the product type name
         $(product_type_edit_name_input).val(productTypeToEdit.name);
     })
@@ -227,7 +227,7 @@ $(() => {
         let newProductTypeName = $(product_type_edit_name_input).val();
         // get id of product type from button click with data attribute editpt
         let productTypeId = $(edit_product_type_save_btn).data('editpt');
-        console.log('saving product type name', newProductTypeName, productTypeId);
+        // console.log('saving product type name', newProductTypeName, productTypeId);
         // find product type to update
         let currentProductType = globalStore.productTypes.find(pt => pt.id === productTypeId);
 
@@ -243,4 +243,36 @@ $(() => {
     $(edit_product_type_modal_close).click(() => {
         $(edit_product_type_modal).removeClass("active");
     })
+
+
+    // add reset action for renames
+    const resetOptionInputs = (type) => {
+        let currentProductType = globalStore.productTypes.find(pt => pt.id === globalStore.currentProductType);
+        let message = ""
+        currentProductType.options.forEach(option => {
+            if (type === "rename") {
+                option.reName = ""
+                message = "All Renames have been cleared!"
+            } else {
+                option.newSortId = ""
+                message = "All Sort ID's have been cleared!"
+            }
+        });
+
+        saveToLocalStorage();
+        renderDom();
+        notify(message, "success")
+    }
+
+
+    $(po_reset_rename_column_btn).on('click', function (e) {
+        e.preventDefault()
+        resetOptionInputs("rename")
+    })
+
+    $(po_reset_order_column_btn).on('click', function (e) {
+        e.preventDefault()
+        resetOptionInputs("sortid")
+    })
+
 })

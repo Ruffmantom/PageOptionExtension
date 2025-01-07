@@ -5,12 +5,10 @@ const createProductTypeTab = (data, currentProductTypeId) => {
 
             <div class="po_menu_tab_item_name_cont">
                 <p class="txt_sml truncate po_menu_tab_item_name">${data.name}</p>
-                <input type="text" value="${data.name}" placeholder="Please Enter a Name..."
-                    class="po_menu_tab_item_rename_input">
             </div>
 
             <div class="po_menu_tab_item_action_group">
-                <button class="po_edit_product_type_name_btn icon_button sml subtle tooltip_cont" data-tooltip="Edit Product Type Name" data-tabid="${data.id}">
+                <button class="po_edit_product_type_name_btn icon_button sml subtle" data-tabid="${data.id}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                         width="20px">
                         <path
@@ -18,7 +16,7 @@ const createProductTypeTab = (data, currentProductTypeId) => {
                     </svg>
                 </button>
 
-                <button class="po_delete_product_type_btn icon_button sml danger tooltip_cont" data-tooltip="Delete Product Type" data-tabid="${data.id}">
+                <button class="po_delete_product_type_btn icon_button sml danger" data-tabid="${data.id}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                         width="20px">
                         <path
@@ -37,7 +35,7 @@ const createProductOptionHtml = (option) => {
     <div data-optionid="${option.id}" class="po_option po_option_table_row">
         
         <div class="po_option_table_cell">
-            <button data-tooltip="Delete Option" data-optionid="${option.id}" class="delete_option_btn icon_button danger tooltip_cont">
+            <button tabindex="-1" data-optionid="${option.id}" class="delete_option_btn icon_button danger ">
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                     width="20px">
                     <path
@@ -46,18 +44,18 @@ const createProductOptionHtml = (option) => {
             </button>
         </div>
 
-        <div class="po_option_table_cell">
+        <div class="po_option_table_cell option_name_cell">
             <span class="po_option_index txt_sml txt_sml_50">${option.sortId}</span>
             <input data-type="po_name" class="po_table_option_input p_l_25" value="${option.optionName}" type="text" placeholder="Option Name">
         </div>
         
-        <div class="po_option_table_cell">
+        <div class="po_option_table_cell option_rename_cell">
+            <input data-type="po_rename" class="po_table_option_input" value="${option.reName}" type="text" placeholder="Rename...">
+        </div>
+
+        <div class="po_option_table_cell option_sort_cell">
             <input data-type="po_sortid" class="po_table_option_input" value="${option.newSortId ? option.newSortId : 0}" type="text" placeholder="0" min="0"
                 max="50">
-        </div>
-        
-        <div class="po_option_table_cell">
-            <input data-type="po_rename" class="po_table_option_input" value="${option.reName}" type="text" placeholder="Option Name">
         </div>
 
     </div>

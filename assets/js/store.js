@@ -106,14 +106,14 @@ const loadApp = async () => {
     await loadFromLocalStorage();
 
     if (globalStore.productTypes.length > 0) {
-        console.log('we have data')
+        // console.log('we have data')
         // hide intro text
         $(intro_text).hide();
         // show the table
         $(po_option_table).show();
         renderDom();
     } else {
-        console.log('we have no data')
+        // console.log('we have no data')
         // show the intro text
         $(intro_text).show();
         // hide the table
@@ -128,10 +128,10 @@ const saveToLocalStorage = () => {
 const loadFromLocalStorage = () => {
     const data = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (data) {
-        console.log('loading from local storage')
+        // console.log('loading from local storage')
         globalStore = JSON.parse(data);
     } else {
-        console.log('no data in local storage')
+        // console.log('no data in local storage')
         // If no data, then initialize globalStore with a fresh default 
         // and save it so we don't keep hitting this branch on refresh.
         globalStore = getDefaultGlobalStore();

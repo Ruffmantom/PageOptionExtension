@@ -45,7 +45,7 @@ body {
     padding-left: 20px;
 }
 
-.p_l_25{
+.p_l_25 {
     padding-left: 25px;
 
 }
@@ -94,14 +94,16 @@ button.icon_button.sml svg {
     height: 12px;
 }
 
-
+.btn.subtle:hover,
 .icon_button.sml.subtle:hover,
 .icon_button.subtle:hover {
     background-color: var(--color-primary);
 }
 
+.btn.subtle:hover,
 .icon_button.subtle:hover>svg {
     fill: var(--color-light);
+    color: var(--color-light);
 }
 
 .icon_button.sml.danger:hover,
@@ -168,11 +170,12 @@ input:focus-within {
     font-size: 20px;
 }
 
-.hidden{
+.hidden {
     opacity: 0;
     width: 0;
     position: absolute;
 }
+
 /* truncate single line text */
 .truncate {
     white-space: nowrap;
@@ -284,20 +287,19 @@ input:focus-within {
 #po_notification_popper {
     position: absolute;
     z-index: 999;
-    top: -500px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -20px);
     background-color: var(--color-primary);
     color: var(--color-light);
     padding: 3px 7px;
     border-radius: var(--border-radius-small);
     max-width: 300px;
-    transition: top 300ms ease-out, opacity 300ms ease-out;
     opacity: 0;
+    transition: transform 150ms ease-out, opacity 150ms ease-out;
 }
 
 #po_notification_popper.active {
-    top: 10px;
+    transform: translate(-50%, 0);
     opacity: 1;
-    transition: top 300ms ease-in, opacity 300ms ease-in;
+    transition: transform 150ms ease-in, opacity 150ms ease-in;
 }

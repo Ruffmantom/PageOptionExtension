@@ -155,12 +155,18 @@
     width: 100%;
 }
 
-
-.po_option_table_cell:nth-child(even) {
-    min-width: calc(100%/2.7);
+.table_header_cells:nth-child(2),
+.option_name_cell{
+    width: 100%;
+    max-width:160px ;
 }
 
 
+.table_header_cells:nth-child(3),
+.option_rename_cell{
+    width:100% ;
+    max-width:160px ;
+}
 
 .po_option_index {
     position: absolute;

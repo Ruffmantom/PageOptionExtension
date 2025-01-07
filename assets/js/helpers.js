@@ -59,7 +59,7 @@ const generateOutputs = (type) => {
     let sortOutput = [];
     // need to get the current product type
     let currentProductType = globalStore.productTypes.find(productType => productType.id === globalStore.currentProductType);
-    console.log(currentProductType);
+    // console.log(currentProductType);
     // need to generate two outputs
     // one for names
     // one for sort
@@ -91,7 +91,7 @@ const generateOutputs = (type) => {
     }
 
 
-    // console.log("Names: ", nameOutput, "\n\n Names: ", sortOutput);
+    // // console.log("Names: ", nameOutput, "\n\n Names: ", sortOutput);
 
     // now return based on type
     if (type === "name") {
@@ -106,7 +106,7 @@ const generateOutputs = (type) => {
 // now use "copy_input_hidden" to copy the output
 function copyToClipboard(output) {
     navigator.clipboard.writeText(output).then(() => {
-        console.log('Text copied to clipboard', output);
+        // console.log('Text copied to clipboard', output);
     }).catch(err => {
         console.error('Failed to copy text: ', err);
     });
