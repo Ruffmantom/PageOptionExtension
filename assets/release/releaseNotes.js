@@ -24,5 +24,25 @@ const releases = [
         `,
         dateIssued:"01/07/25",
         userHasRead:false,
+    },
+    {
+        id:2,
+        versionNumber:'1.0.2',
+        message:`
+        <div class="release_message">
+            <p class="title_lg"><strong>Update 1/17/25</strong></p>
+            <p><strong>Release Version 0.0.2</strong></p>
+            <ul>
+                <li>Updated Some Styles.</li>
+                <li>Added a scroll to active tab if the tab navigation is scrollable.</li>
+                <li>Added a scroll to newly added option.</li>
+            </ul>
+            <p><strong>Share Your Thoughts</strong><br>Please leave a review or send your feedback to help shape future updates.</p>
+            <p><strong>Need More Tools?</strong><br>Check out my other extensions and a way to get in touch <a target="_blank" rel="noopener noreferrer" href="https://www.ruffwd.com/">Here</a>.</p>
+            <p>-Tom</p>
+        </div>
+        `,
+        dateIssued:"01/17/25",
+        userHasRead:false,
     }
 ]

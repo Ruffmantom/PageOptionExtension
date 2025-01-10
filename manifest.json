@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Product Type Tool",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "This extension helps simplify renaming and sorting product options when working with Web Products in the CloudLab backend.",
   "action": {
     "default_title": "ProductType Tool",

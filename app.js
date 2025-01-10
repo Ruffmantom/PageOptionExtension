@@ -17,6 +17,7 @@ $(() => {
     // open add product type modal
     $(open_product_type_menu_btn).click(() => {
         $(product_type_menu_modal).addClass("active")
+        scrollToActiveTab()
     })
     // close add product type modal
     $(product_type_menu_modal_close).click(() => {
@@ -99,6 +100,7 @@ $(() => {
             saveToLocalStorage();
             $(add_new_option_modal).removeClass("active")
             renderDom();
+            scrollToAddedOption();
             // clear the input
             newOptionNameValue = "";
             $(option_name_input).val("");
@@ -327,5 +329,25 @@ $(() => {
         }
         saveToLocalStorage()
     });
+
+    // scroll the navigation to active tab
+    function scrollToActiveTab() {
+        // Find the active menu tab
+        var $activeTab = $("#po_tab_navigation_bar .po_menu_tab_item.active");
+
+        if ($activeTab.length) {
+            // Scroll the parent div vertically to the active child
+            $("#po_tab_navigation_bar").animate({
+                scrollTop: $activeTab.offset().top - $("#po_tab_navigation_bar").offset().top + $("#po_tab_navigation_bar").scrollTop()
+            }, 300); // Animation duration in ms
+        }
+    }
+
+    function scrollToAddedOption() {
+        var $optionTable = $("#po_option_table");
+        $optionTable.animate({
+            scrollTop: $optionTable[0].scrollHeight
+        }, 300); // Animation duration in ms
+    }
 
 })
