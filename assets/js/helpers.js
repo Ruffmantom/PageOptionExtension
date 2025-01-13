@@ -126,6 +126,7 @@ const findMostRecentRelease = (array) => {
 
     // Sort the dates in descending order
     validDates.sort((a, b) => b.dateObj - a.dateObj);
+    console.log('Valid Releases: ', validDates)
 
     // Return the most recent date object, or null if none are valid
     return validDates.length > 0 ? validDates[0] : null;

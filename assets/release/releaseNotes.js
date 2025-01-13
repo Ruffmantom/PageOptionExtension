@@ -30,8 +30,8 @@ const releases = [
         versionNumber:'1.0.2',
         message:`
         <div class="release_message">
-            <p class="title_lg"><strong>Update 1/17/25</strong></p>
-            <p><strong>Release Version 0.0.2</strong></p>
+            <p class="title_lg"><strong>Update 1/14/25</strong></p>
+            <p><strong>Release Version 1.0.2</strong></p>
             <ul>
                 <li>Updated Some Styles.</li>
                 <li>Added a scroll to active tab if the tab navigation is scrollable.</li>
@@ -42,7 +42,7 @@ const releases = [
             <p>-Tom</p>
         </div>
         `,
-        dateIssued:"01/17/25",
+        dateIssued:"01/13/25",
         userHasRead:false,
     }
 ]
