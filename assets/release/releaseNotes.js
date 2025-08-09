@@ -44,5 +44,23 @@ const releases = [
         `,
         dateIssued:"01/13/25",
         userHasRead:false,
+    },
+    {
+        id:3,
+        versionNumber:'1.0.3',
+        message:`
+        <div class="release_message">
+            <p class="title_lg"><strong>Update 8/9/25</strong></p>
+            <p><strong>Release Version 1.0.3</strong></p>
+            <ul>
+                <li>Fixed injected style issues.</li>
+            </ul>
+            <p><strong>Share Your Thoughts</strong><br>Please leave a review or send your feedback to help shape future updates.</p>
+            <p><strong>Need More Tools?</strong><br>Check out my other extensions and a way to get in touch <a target="_blank" rel="noopener noreferrer" href="https://www.ruffwd.com/">Here</a>.</p>
+            <p>-Tom</p>
+        </div>
+        `,
+        dateIssued:"08/09/25",
+        userHasRead:false,
     }
 ]
