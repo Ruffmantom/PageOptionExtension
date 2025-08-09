@@ -71,18 +71,18 @@ textarea {
     outline: unset;
 }
 
-.btn {
+.po_btn {
     cursor: pointer;
     color: var(--color-light);
     background-color: var(--color-primary);
     padding: 8px 40px;
 }
 
-.btn:hover {
+.po_btn:hover {
     background-color: var(--color-primary-40);
 }
 
-button.icon_button {
+button.po_icon_button {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -91,7 +91,7 @@ button.icon_button {
     width: 35px;
 }
 
-button.icon_button.sml {
+button.po_icon_button.sml {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -100,29 +100,29 @@ button.icon_button.sml {
     width: 25px;
 }
 
-button.icon_button.sml svg {
+button.po_icon_button.sml svg {
     width: 12px;
     height: 12px;
 }
 
-.btn.subtle:hover,
-.icon_button.sml.subtle:hover,
-.icon_button.subtle:hover {
+.po_btn.subtle:hover,
+.po_icon_button.sml.subtle:hover,
+.po_icon_button.subtle:hover {
     background-color: var(--color-primary);
 }
 
-.btn.subtle:hover,
-.icon_button.subtle:hover>svg {
+.po_btn.subtle:hover,
+.po_icon_button.subtle:hover>svg {
     fill: var(--color-light);
     color: var(--color-light);
 }
 
-.icon_button.sml.danger:hover,
-.icon_button.danger:hover {
+.po_icon_button.sml.danger:hover,
+.po_icon_button.danger:hover {
     background-color: var(--color-danger);
 }
 
-.icon_button.danger:hover>svg {
+.po_icon_button.danger:hover>svg {
     fill: var(--color-light);
 }
 
@@ -145,7 +145,7 @@ input:focus-within {
     width: 20px;
 }
 
-.btn.subtle {
+.po_btn.subtle {
     color: var(--color-dark);
     background-color: var(--container-bkg-1);
 }

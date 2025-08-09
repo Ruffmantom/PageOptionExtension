@@ -8,7 +8,7 @@ const createProductTypeTab = (data, currentProductTypeId) => {
             </div>
 
             <div class="po_menu_tab_item_action_group">
-                <button class="po_edit_product_type_name_btn icon_button sml subtle" data-tabid="${data.id}">
+                <button class="po_edit_product_type_name_btn po_icon_button sml subtle" data-tabid="${data.id}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                         width="20px">
                         <path
@@ -16,7 +16,7 @@ const createProductTypeTab = (data, currentProductTypeId) => {
                     </svg>
                 </button>
 
-                <button class="po_delete_product_type_btn icon_button sml danger" data-tabid="${data.id}">
+                <button class="po_delete_product_type_btn po_icon_button sml danger" data-tabid="${data.id}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                         width="20px">
                         <path
@@ -35,7 +35,7 @@ const createProductOptionHtml = (option) => {
     <div data-optionid="${option.id}" class="po_option po_option_table_row">
         
         <div class="po_option_table_cell">
-            <button tabindex="-1" data-optionid="${option.id}" class="delete_option_btn icon_button danger ">
+            <button tabindex="-1" data-optionid="${option.id}" class="delete_option_btn po_icon_button danger ">
                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                     width="20px">
                     <path
